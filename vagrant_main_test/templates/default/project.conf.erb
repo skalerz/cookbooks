@@ -1,0 +1,14 @@
+<VirtualHost *:80>
+    DocumentRoot <%= @node[:vagrant][:directory] %>/www
+    ServerName local.ben.com
+</VirtualHost>
+
+<VirtualHost *:80>
+    DocumentRoot <%= @node[:vagrant][:directory] %>/phpmyadmin
+    ServerName local.phpmyadmin.com
+</VirtualHost>
+
+<VirtualHost *:80>
+    DocumentRoot <%= @node[:vagrant][:directory] %>/Jobeet
+    ServerName local.jobeet.com
+</VirtualHost>
