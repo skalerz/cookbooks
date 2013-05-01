@@ -9,6 +9,12 @@
 </VirtualHost>
 
 <VirtualHost *:80>
-    DocumentRoot <%= @node[:vagrant][:directory] %>/Jobeet
-    ServerName local.jobeet.com
+    DocumentRoot <%= @node[:vagrant][:directory] %>/Jobeet/web
+    ServerName jobeet.local
+    ErrorLog <%= @node[:vagrant][:directory] %>/logs/jobeet-error.log
+    CustomLog <%= @node[:vagrant][:directory] %>/logs/jobeet-access.log combined
+    <Directory "<%= @node[:vagrant][:directory] %>/Jobeet/web">
+        AllowOverride All
+        Allow from All
+    </Directory>
 </VirtualHost>
