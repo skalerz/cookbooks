@@ -31,6 +31,9 @@ package "mysql-client-core-5.1" do
   action :install
 end
 
+package "phpunit" do    
+  action :install
+
 #Fin des installations
 
 execute "disable-default-site" do
